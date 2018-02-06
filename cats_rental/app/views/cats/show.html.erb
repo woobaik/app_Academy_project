@@ -1,0 +1,13 @@
+<h1> <%= @cat.name %>'s profle</h1>
+  <table>
+    <tr>
+      <th>name</th>
+      <th>attribute</th>
+    </tr>
+    <% [:age, :birth_date, :name, :description].each do |attr| %>
+    <tr>
+      <td><%= attr %></td>
+      <td><%= @cat.send(attr) %></td>
+    </tr>
+    <% end %>
+  </table>

@@ -1,3 +1,5 @@
+require 'action_view'
+include ActionView::Helpers::DateHelper
 class Cat < ApplicationRecord
 
   CAT_COLORS = %w(red, white, grey, pink, orange, black).freeze
