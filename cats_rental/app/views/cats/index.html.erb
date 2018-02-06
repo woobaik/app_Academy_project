@@ -1,5 +1,9 @@
 <h1>Cat's list</h1>
+<% flash.each do |ele,msg| %>
+<%= msg %>
+<% end %>
   <ul>
+
 
     <% @cats.each do |cat| %>
     <li><%= link_to cat.name, cat_url(cat) %></li>
