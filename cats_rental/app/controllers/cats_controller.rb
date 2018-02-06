@@ -25,6 +25,20 @@ class CatsController < ApplicationController
     end
   end
 
+  def edit
+    @cat = Cat.find(params[:id])
+  end
+
+  def update
+    @cat = Cat.find(params[:id])
+    if @cat.update_attributes(cat_params)
+      flash[:msg] = "Cat info is successfully updated!"
+    else
+      @cat.errors.full_messages
+      render 'edit'
+    end
+  end
+
   private
 
 
